@@ -3,7 +3,7 @@ FROM debian:wheezy
 
 RUN apt-get update \
 	&& apt-get install -y python curl \
-	&& curl -SL 'https://bootstrap.pypa.io/get-pip.py' | python
+	&& apt-get install -y python-pip
 
 # Force stdin, stdout and stderr to be totally unbuffered
 ENV PYTHONUNBUFFERED 1
@@ -13,6 +13,7 @@ WORKDIR /app
 
 ADD requirements.txt /app/
 
+RUN apt-get install -y python-flask python-yaml python-mock python-nose python-coverage
 RUN pip install -r requirements.txt
 
 ADD . /app/
