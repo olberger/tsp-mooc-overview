@@ -1,7 +1,7 @@
 # Web dev. framework
 #flask
 # API client for docker
-docker-py>=0.7
+#docker-py>=0.7
 # YAML library for python
 #pyyaml
 # Python Mocking and Patching Library for Testing
@@ -12,4 +12,4 @@ docker-py>=0.7
 #coverage
 Flask-Testing
 # Fast, simple object-to-object and broadcast signaling
-blinker
+#blinker

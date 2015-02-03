@@ -1,5 +1,5 @@
 # Use same base as postgres to minimize total size
-FROM debian:wheezy
+FROM debian:jessie
 
 RUN apt-get update \
 	&& apt-get install -y python curl \
@@ -13,7 +13,7 @@ WORKDIR /app
 
 ADD requirements.txt /app/
 
-RUN apt-get install -y python-flask python-yaml python-mock python-nose python-coverage
+RUN apt-get install -y python-flask python-yaml python-mock python-nose python-coverage python-docker python-blinker
 RUN pip install -r requirements.txt
 
 ADD . /app/
